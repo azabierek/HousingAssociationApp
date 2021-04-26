@@ -14,6 +14,5 @@ namespace HousingAssociationApp.Model
         public decimal AccountStatus { get; set; }
         public DateTime Date { get; set; }
         public int IdPerson { get; set; }
-        public virtual Person Person { get; set; }
     }
 }

@@ -11,9 +11,27 @@ namespace HousingAssociationApp.VM
     public class PersonViewModel : INotifyPropertyChanged
     {
         private Person person;
+        private HousingAssociation hs;
+        public List<HousingAssociation> HousingAssociations { get; set; }
         public PersonViewModel()
         {
             person = new Person();
+            using (HouseDbContext hdb = new HouseDbContext()) HousingAssociations = hdb.HousingAssociations.ToList(); 
+        }
+
+        public HousingAssociation HousingAssociation { 
+            get
+            {
+                return hs;
+            }
+            set
+            {
+                if (hs!=value)
+                {
+                    hs = value;
+                    OnPropertyChange("HousingAssociation");
+                }
+            }
         }
         public string Name { get 
             {

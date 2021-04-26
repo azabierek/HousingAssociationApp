@@ -21,3 +21,5 @@ C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\HousingAssociationA
 C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\HousingAssociationApp.Migrations.AddBenefitTable.resources
 C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\CRUDPersonWindows\CreatePersonWindow.g.cs
 C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\CRUDPersonWindows\CreatePersonWindow.baml
+C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\HousingAssociationApp.Migrations.ChangeBillsForPerson.resources
+C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\HousingAssociationApp.Migrations.DeleteBillsInPeopleTable.resources

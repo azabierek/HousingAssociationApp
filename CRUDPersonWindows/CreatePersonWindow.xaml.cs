@@ -1,4 +1,5 @@
-﻿using HousingAssociationApp.VM;
+﻿using HousingAssociationApp.Model;
+using HousingAssociationApp.VM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,8 +26,12 @@ namespace HousingAssociationApp.CRUDPersonWindows
         {
             InitializeComponent();
             pvm = new PersonViewModel();
-            
             DataContext = pvm;
+
+            using (HouseDbContext hdb = new HouseDbContext())
+            {
+              //  HouseAssociationCombo.ItemsSource = hdb.HousingAssociations.Select(x => x.IdHousingAssociation).ToList();
+            }
         }
     }
 }

@@ -70,6 +70,14 @@
     <Compile Include="CRUDPersonWindows\CreatePersonWindow.xaml.cs">
       <DependentUpon>CreatePersonWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104261015404_ChangeBillsForPerson.cs" />
+    <Compile Include="Migrations\202104261015404_ChangeBillsForPerson.designer.cs">
+      <DependentUpon>202104261015404_ChangeBillsForPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104261018440_DeleteBillsInPeopleTable.cs" />
+    <Compile Include="Migrations\202104261018440_DeleteBillsInPeopleTable.designer.cs">
+      <DependentUpon>202104261018440_DeleteBillsInPeopleTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="VM\PersonViewModel.cs" />
     <Page Include="CRUDPersonWindows\CreatePersonWindow.xaml">
       <SubType>Designer</SubType>
@@ -130,6 +138,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104260743200_AddBenefitTable.resx">
       <DependentUpon>202104260743200_AddBenefitTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104261015404_ChangeBillsForPerson.resx">
+      <DependentUpon>202104261015404_ChangeBillsForPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104261018440_DeleteBillsInPeopleTable.resx">
+      <DependentUpon>202104261018440_DeleteBillsInPeopleTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

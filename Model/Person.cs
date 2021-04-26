@@ -22,8 +22,6 @@ namespace HousingAssociationApp.Model
 
         public virtual List<Parameters> Parameters { get; set; }
 
-        public int IdBenefit { get; set; }
-        public virtual Benefit Benefit { get; set; }
 
     }
 }

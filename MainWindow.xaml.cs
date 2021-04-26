@@ -1,4 +1,5 @@
-﻿using HousingAssociationApp.Model;
+﻿using HousingAssociationApp.CRUDPersonWindows;
+using HousingAssociationApp.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,33 +26,12 @@ namespace HousingAssociationApp
         {
             InitializeComponent();
 
-            using(HouseDbContext hdb = new HouseDbContext())
-            {
+        }
 
-
-                hdb.BankAccounts.Add(new BankAccount()
-                {
-                    IdHousingAssociation = 2,
-                    IdBankAccount = 2
-                });
-
-                hdb.HousingAssociations.Add(new HousingAssociation()
-                {
-                    IdHousingAssociation = 2,
-                    Name = "ADS"
-                });
-                hdb.SaveChanges();
-
-                foreach (var item in hdb.HousingAssociations)
-                {
-                    thisGrid.Children.Add(new Label()
-                    {
-                        Content = item.IdHousingAssociation,
-                    });
-                }
-               
-            }
-
+        private void CreatePersonClick(object sender, RoutedEventArgs e)
+        {
+            CreatePersonWindow cpw = new CreatePersonWindow();
+            cpw.Visibility = Visibility.Visible;
         }
     }
 }

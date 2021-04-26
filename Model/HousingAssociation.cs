@@ -18,8 +18,8 @@ namespace HousingAssociationApp.Model
         public string Street { get; set; }
         public string PostCode { get; set; }
         public string NumberOfHouse { get; set; }
-        public string BankName { get; set; }
         public virtual List<BankAccount> BankAccount { get; set; }
+        public virtual List<Person> Person { get; set; }
 
     }
 }

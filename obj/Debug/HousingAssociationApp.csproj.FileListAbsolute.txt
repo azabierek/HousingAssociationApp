@@ -16,3 +16,8 @@ C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\HousingAssociationA
 C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\HousingAssociationApp.csproj.CopyComplete
 C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\HousingAssociationApp.exe
 C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\HousingAssociationApp.pdb
+C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\HousingAssociationApp.Migrations.AddBillsPersonsAndOtherTables.resources
+C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\HousingAssociationApp.Migrations.DeleteBankNameFromHousingAssociation.resources
+C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\HousingAssociationApp.Migrations.AddBenefitTable.resources
+C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\CRUDPersonWindows\CreatePersonWindow.g.cs
+C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\CRUDPersonWindows\CreatePersonWindow.baml

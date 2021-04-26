@@ -67,6 +67,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CRUDPersonWindows\CreatePersonWindow.xaml.cs">
+      <DependentUpon>CreatePersonWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VM\PersonViewModel.cs" />
+    <Page Include="CRUDPersonWindows\CreatePersonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -81,9 +89,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\202104231805148_AddBillsPersonsAndOtherTables.cs" />
+    <Compile Include="Migrations\202104231805148_AddBillsPersonsAndOtherTables.designer.cs">
+      <DependentUpon>202104231805148_AddBillsPersonsAndOtherTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104231807274_DeleteBankNameFromHousingAssociation.cs" />
+    <Compile Include="Migrations\202104231807274_DeleteBankNameFromHousingAssociation.designer.cs">
+      <DependentUpon>202104231807274_DeleteBankNameFromHousingAssociation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104260743200_AddBenefitTable.cs" />
+    <Compile Include="Migrations\202104260743200_AddBenefitTable.designer.cs">
+      <DependentUpon>202104260743200_AddBenefitTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\BankAccount.cs" />
+    <Compile Include="Model\Benefit.cs" />
+    <Compile Include="Model\Bills.cs" />
     <Compile Include="Model\HouseDbContext.cs" />
     <Compile Include="Model\HousingAssociation.cs" />
+    <Compile Include="Model\Parameters.cs" />
+    <Compile Include="Model\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -97,6 +122,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\202104231805148_AddBillsPersonsAndOtherTables.resx">
+      <DependentUpon>202104231805148_AddBillsPersonsAndOtherTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104231807274_DeleteBankNameFromHousingAssociation.resx">
+      <DependentUpon>202104231807274_DeleteBankNameFromHousingAssociation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104260743200_AddBenefitTable.resx">
+      <DependentUpon>202104260743200_AddBenefitTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -106,6 +140,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo_sf.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo_sf_eq3_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -15,5 +15,11 @@ namespace HousingAssociationApp.Model
         }
         public DbSet<BankAccount> BankAccounts { get; set; }
         public DbSet<HousingAssociation> HousingAssociations { get; set; }
+        public DbSet<Person> Persons { get; set; }
+        public DbSet<Bills> Bills { get; set; }
+        public DbSet<Parameters> Parameters { get; set; }
+
+        public DbSet<Benefit> Benefits { get; set; }
+        
     }
 }

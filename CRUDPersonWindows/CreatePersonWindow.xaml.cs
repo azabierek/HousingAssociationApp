@@ -27,11 +27,9 @@ namespace HousingAssociationApp.CRUDPersonWindows
             InitializeComponent();
             pvm = new PersonViewModel();
             DataContext = pvm;
-
-            using (HouseDbContext hdb = new HouseDbContext())
-            {
-              //  HouseAssociationCombo.ItemsSource = hdb.HousingAssociations.Select(x => x.IdHousingAssociation).ToList();
-            }
+          
+            if (pvm.CloseAction == null)
+                pvm.CloseAction = new Action(this.Close);
         }
     }
 }

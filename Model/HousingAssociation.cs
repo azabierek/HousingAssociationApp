@@ -12,12 +12,12 @@ namespace HousingAssociationApp.Model
         [Key]
         public int IdHousingAssociation { get; set; }
         public string Name { get; set; }
-        public int NIP { get; set; }
+        public string NIP { get; set; }
         public int Regon { get; set; }
         public string City { get; set; }
         public string Street { get; set; }
         public string PostCode { get; set; }
-        public string NumberOfHouse { get; set; }
+        public int NumberOfHouse { get; set; }
         public virtual List<BankAccount> BankAccount { get; set; }
         public virtual List<Person> Person { get; set; }
 

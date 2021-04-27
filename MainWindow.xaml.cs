@@ -1,4 +1,5 @@
-﻿using HousingAssociationApp.CRUDPersonWindows;
+﻿using HousingAssociationApp.CRUDHousingAssociationWindows;
+using HousingAssociationApp.CRUDPersonWindows;
 using HousingAssociationApp.Model;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,12 @@ namespace HousingAssociationApp
         {
             CreatePersonWindow cpw = new CreatePersonWindow();
             cpw.Visibility = Visibility.Visible;
+        }
+
+        private void CreateHousingAssociationClick(object sender, RoutedEventArgs e)
+        {
+            CreateHousingAssociationWindow chaw = new CreateHousingAssociationWindow();
+            chaw.Visibility = Visibility.Visible;
         }
     }
 }

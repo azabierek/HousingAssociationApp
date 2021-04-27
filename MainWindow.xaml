@@ -44,7 +44,7 @@
         <Image Grid.Row="1" Grid.Column="4" Source="logo_sf.jpg" Grid.RowSpan="3"></Image>
         
         
-        <Button Grid.Column="1" Grid.Row="1" Background="LightGreen">
+        <Button Grid.Column="1" Grid.Row="1" Background="LightGreen" Click="CreateHousingAssociationClick">
             <TextBlock>DODAJ SPÓŁDZIELNIĘ</TextBlock>
         </Button>
         <Button Grid.Column="1" Grid.Row="2" Background="LightGreen" Click="CreatePersonClick">

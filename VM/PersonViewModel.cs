@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.Command;
 using HousingAssociationApp.Model;
+using HousingAssociationApp.Validation;
 
 namespace HousingAssociationApp.VM
 {
@@ -12,11 +18,62 @@ namespace HousingAssociationApp.VM
     {
         private Person person;
         private HousingAssociation hs;
+        private ValidationClass vc;
+        public ICommand CreateNewPerson { get; }
+        public Action CloseAction { get; set; }
         public List<HousingAssociation> HousingAssociations { get; set; }
+        //Inserting NEW PERSON!
         public PersonViewModel()
         {
             person = new Person();
-            using (HouseDbContext hdb = new HouseDbContext()) HousingAssociations = hdb.HousingAssociations.ToList(); 
+            using (HouseDbContext hdb = new HouseDbContext()) HousingAssociations = hdb.HousingAssociations.ToList();
+            //CreateNewPerson = new RelayCommand(OnAddPersonClick,CanUserAddPerson);
+            CreateNewPerson = new RelayCommand(OnAddPersonClick);
+        }
+
+        //Another constructor - MODIFY EXISTING PERSON.
+
+        bool CanUserAddPerson()
+        {
+            var result = false;
+            vc = new ValidationClass();
+            if (vc.WordValidation(person.Name, person.Surname, person.City, person.Street) && vc.PostCodeValidation(person.PostCode)) result = true;
+            return result;
+        }
+        void OnAddPersonClick()
+        {
+            try
+            {
+                if (CanUserAddPerson())
+                {
+                    using (HouseDbContext hdb = new HouseDbContext())
+                    {
+                        person.IdHousingAssociation = hs.IdHousingAssociation;
+                        hdb.Persons.Add(person);
+                        hdb.SaveChanges();
+                        MessageBox.Show("DODANO OSOBĘ!");
+                        CloseAction();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("WALIDACJA PÓL PRZESZŁA NIEPOMYŚLNIE, SPRAWDŹ WPISY I POPRAW");
+                }
+                
+
+            }
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("UZUPEŁNIJ POLA WARTOŚCIAMI!\nPOLA NIE MOGĄ ZOSTAĆ PUSTE!");
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("UZUPEŁNIJ DANE OSOBY");
+            }
         }
 
         public HousingAssociation HousingAssociation { 

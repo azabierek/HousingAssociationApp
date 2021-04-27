@@ -90,6 +90,9 @@
     <Compile Include="CRUDHousingAssociationWindows\CreateHousingAssociationWindow.xaml.cs">
       <DependentUpon>CreateHousingAssociationWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CRUDParameters\CreateParametersWindow.xaml.cs">
+      <DependentUpon>CreateParametersWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CRUDPersonWindows\CreatePersonWindow.xaml.cs">
       <DependentUpon>CreatePersonWindow.xaml</DependentUpon>
     </Compile>
@@ -109,10 +112,19 @@
     <Compile Include="Migrations\202104270756556_ChangeNIPFromIntToString.designer.cs">
       <DependentUpon>202104270756556_ChangeNIPFromIntToString.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104270819449_AddDeclaredWaterUsageInParameterTable.cs" />
+    <Compile Include="Migrations\202104270819449_AddDeclaredWaterUsageInParameterTable.designer.cs">
+      <DependentUpon>202104270819449_AddDeclaredWaterUsageInParameterTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Validation\ValidationClass.cs" />
     <Compile Include="VM\HousingAssociationViewModel.cs" />
+    <Compile Include="VM\ParametersViewModel.cs" />
     <Compile Include="VM\PersonViewModel.cs" />
     <Page Include="CRUDHousingAssociationWindows\CreateHousingAssociationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUDParameters\CreateParametersWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -188,6 +200,9 @@
     <EmbeddedResource Include="Migrations\202104270756556_ChangeNIPFromIntToString.resx">
       <DependentUpon>202104270756556_ChangeNIPFromIntToString.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104270819449_AddDeclaredWaterUsageInParameterTable.resx">
+      <DependentUpon>202104270819449_AddDeclaredWaterUsageInParameterTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -204,6 +219,7 @@
   <ItemGroup>
     <Resource Include="logo_sf_eq3_icon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

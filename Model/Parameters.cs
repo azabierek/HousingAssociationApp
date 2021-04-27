@@ -16,6 +16,8 @@ namespace HousingAssociationApp.Model
         public double ColdWaterUsage { get; set; }
         public int QuantityOfAntennas { get; set; }
         public double HotWaterUsage { get; set; }
+        public double DeclaredColdWaterUsage { get; set; }
+        public double DeclaredHotWaterUsage { get; set; }
 
         public int IdPerson { get; set; }
         public virtual List<Person> Person { get; set; }

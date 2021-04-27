@@ -1,4 +1,5 @@
-﻿using HousingAssociationApp.Model;
+﻿using HousingAssociationApp.CRUDParameters;
+using HousingAssociationApp.Model;
 using HousingAssociationApp.VM;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,13 @@ namespace HousingAssociationApp.CRUDPersonWindows
             DataContext = pvm;
           
             if (pvm.CloseAction == null)
-                pvm.CloseAction = new Action(this.Close);
+                pvm.CloseAction = new Action(this.CloseWindowOpenCreateParameter);
+        }
+        void CloseWindowOpenCreateParameter()
+        {
+            this.Close();
+            CreateParametersWindow cpw = new CreateParametersWindow(pvm.IdPerson);
+            cpw.Visibility = Visibility.Visible;
         }
     }
 }

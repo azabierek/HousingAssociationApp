@@ -39,6 +39,7 @@ namespace HousingAssociationApp.VM
                     {
                         hdb.HousingAssociations.Add(housingAssociation);
                         hdb.SaveChanges();
+                        MessageBox.Show("DODANO SPÓŁDZIELNIE!");
                         ActionClose();
                     }
                 }

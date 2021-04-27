@@ -1,0 +1,74 @@
+﻿<Window x:Class="HousingAssociationApp.CRUDParameters.CreateParametersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HousingAssociationApp.CRUDParameters"
+        mc:Ignorable="d"
+        Title="DODAJ PARAMETRY DO OSOBY" Height="450" Width="1000" Icon="/logo_sf_eq3_icon.ico" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="PRZYPISZ PARAMETRY DO OSOBY" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="POWIERZCHNIA LOKALU"></TextBlock>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Surface}"></TextBox>
+        <TextBlock Grid.Row="4" Grid.Column="1" Text="ILOŚĆ OSÓB"></TextBlock>
+        <TextBox Grid.Row="5" Grid.Column="1"  Text="{Binding QuantityOfPeople, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBlock Grid.Row="6" Grid.Column="1" Text="ZUŻYCIE ZIMNEJ WODY"></TextBlock>
+        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding ColdWaterUsage}"></TextBox>
+        <TextBlock Grid.Row="8" Grid.Column="1" Text="ZADEKLAROWANE ZUŻYCIE ZIMNEJ WODY"></TextBlock>
+        <TextBox Grid.Row="9" Grid.Column="1"  Text="{Binding DeclaredColdWaterUsage}"></TextBox>
+        <TextBlock Grid.Row="10" Grid.Column="1" Text="ZUŻYCIE CIEPŁEJ WODY"></TextBlock>
+        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding HotWaterUsage}"></TextBox>
+        <TextBlock Grid.Row="12" Grid.Column="1" Text="ZADEKLAROWANE ZUŻYCIE CIEPŁEJ WODY"></TextBlock>
+        <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding DeclaredHotWaterUsage}"></TextBox>
+        <TextBlock Grid.Row="14" Grid.Column="1" Text="ILOŚĆ ANTEN"></TextBlock>
+        <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding QuantityOfAntennas, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+
+        <TextBlock Grid.Row="3" Grid.Column="3" Text="{Binding Surface}"/>
+        <TextBlock Grid.Row="5" Grid.Column="3" Text="{Binding QuantityOfPeople}"/>
+        <TextBlock Grid.Row="7" Grid.Column="3" Text="{Binding ColdWaterUsage}"/>
+        <TextBlock Grid.Row="9" Grid.Column="3" Text="{Binding DeclaredColdWaterUsage}"/>
+        <TextBlock Grid.Row="11" Grid.Column="3" Text="{Binding HotWaterUsage}"/>
+        <TextBlock Grid.Row="13" Grid.Column="3" Text="{Binding DeclaredHotWaterUsage}"/>
+        <TextBlock Grid.Row="15" Grid.Column="3" Text="{Binding QuantityOfAntennas}"/>
+        <TextBlock Grid.Row="17" Grid.Column="3" Text="{Binding IdPerson}" TextAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="17" Grid.Column="2" Text="Przypisujesz do osoby o numerze ID:" TextAlignment="Right" VerticalAlignment="Center"/>
+
+        <Button Grid.Column="4" Grid.Row="16" Grid.RowSpan="2" Content="DODAJ PARAMETR" FontSize="18" FontWeight="Bold" Background="LightGreen" Command="{Binding CreateNewParameter}"/>
+    </Grid>
+</Window>
+

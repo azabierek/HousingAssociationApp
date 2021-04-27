@@ -27,9 +27,10 @@ namespace HousingAssociationApp.CRUDHousingAssociationWindows
             havm = new HousingAssociationViewModel();
             DataContext = havm;
             
-            if (havm.ActionClose==null)
+            if (havm.ActionClose == null)
                 havm.ActionClose = new Action(this.Close);
             
+
         }
     }
 }

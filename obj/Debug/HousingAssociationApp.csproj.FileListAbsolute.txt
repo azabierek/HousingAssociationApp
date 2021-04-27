@@ -38,3 +38,6 @@ C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\CRUDHousingAssociat
 C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\CRUDHousingAssociationWindows\CreateHousingAssociationWindow.baml
 C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\HousingAssociationApp.Migrations.InHousingAssociationTableChangeNumberOfHouseFromStringToInt.resources
 C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\HousingAssociationApp.Migrations.ChangeNIPFromIntToString.resources
+C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\CRUDParameters\CreateParametersWindow.g.cs
+C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\CRUDParameters\CreateParametersWindow.baml
+C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\HousingAssociationApp.Migrations.AddDeclaredWaterUsageInParameterTable.resources

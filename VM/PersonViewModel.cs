@@ -27,7 +27,6 @@ namespace HousingAssociationApp.VM
         {
             person = new Person();
             using (HouseDbContext hdb = new HouseDbContext()) HousingAssociations = hdb.HousingAssociations.ToList();
-            //CreateNewPerson = new RelayCommand(OnAddPersonClick,CanUserAddPerson);
             CreateNewPerson = new RelayCommand(OnAddPersonClick);
         }
 
@@ -75,7 +74,6 @@ namespace HousingAssociationApp.VM
                 MessageBox.Show("UZUPEŁNIJ DANE OSOBY");
             }
         }
-
         public HousingAssociation HousingAssociation { 
             get
             {
@@ -87,6 +85,21 @@ namespace HousingAssociationApp.VM
                 {
                     hs = value;
                     OnPropertyChange("HousingAssociation");
+                }
+            }
+        }
+
+        public int IdPerson { 
+            get
+            {
+                return person.IdPerson;
+            }
+            set
+            {
+                if (person.IdPerson != value)
+                {
+                    person.IdPerson = value;
+                    OnPropertyChange("IdPerson");
                 }
             }
         }
@@ -183,9 +196,7 @@ namespace HousingAssociationApp.VM
         protected void OnPropertyChange(string propertyName)
         {
             if (PropertyChanged!=null)
-            {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
         }
 
 

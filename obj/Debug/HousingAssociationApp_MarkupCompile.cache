@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\adrzab\source\repos\HousingAssociationApp\App.xaml
-3-103517004
+4760944738
 
-32-2059293269
+36-1376862271
 1271740941606
-CRUDHousingAssociationWindows\CreateHousingAssociationWindow.xaml;CRUDPersonWindows\CreatePersonWindow.xaml;MainWindow.xaml;
+CRUDHousingAssociationWindows\CreateHousingAssociationWindow.xaml;CRUDParameters\CreateParametersWindow.xaml;CRUDPersonWindows\CreatePersonWindow.xaml;MainWindow.xaml;
 
 False
 

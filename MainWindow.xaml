@@ -5,75 +5,139 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HousingAssociationApp"
         mc:Ignorable="d"
-        Title="ROZLICZANIE SPÓŁDZIELNI APP" Height="1000" Width="1500" WindowStartupLocation="CenterScreen" Icon="logo_sf_eq3_icon.ico">
-    <Window.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Margin" Value="10"/>
+        Title="ROZLICZANIE SPÓŁDZIELNI APP" Height="1000" Width="1500" WindowStartupLocation="CenterScreen" Icon="Content\logo_sf_eq3_icon.ico">
+	<Window.Resources>
+		<Style TargetType="TextBlock">
+			<Setter Property="FontSize" Value="22"/>
+			<Setter Property="FontWeight" Value="Bold"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
-        <Style TargetType="TextBlock">
-            <Setter Property="FontSize" Value="25"/>
-            <Setter Property="FontWeight" Value="Bold"/>
+		<Style TargetType="{x:Type Button}">
+			<Setter Property="Width" Value="340"/>
+			<Setter Property="Margin" Value="12"/>
+			<Style.Triggers>
+				<EventTrigger RoutedEvent="Button.MouseEnter">
+					<BeginStoryboard>
+						<Storyboard Storyboard.TargetProperty="(Button.Width)">
+							<DoubleAnimation Duration="0:0:0:0.25" From="340" To="400" AutoReverse="True"/>
+						</Storyboard>
+					</BeginStoryboard>
+				</EventTrigger>
+			</Style.Triggers>
+		</Style>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
         </Style>
-    </Window.Resources>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="10"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="10"/>
-        </Grid.RowDefinitions>
-        <Image Grid.Row="1" Grid.Column="4" Source="logo_sf.jpg" Grid.RowSpan="3"></Image>
-        
-        
-        <Button Grid.Column="1" Grid.Row="1" Background="LightGreen" Click="CreateHousingAssociationClick">
-            <TextBlock>DODAJ SPÓŁDZIELNIĘ</TextBlock>
+        <Style x:Key="CellTextBlock" TargetType="{x:Type TextBlock}">
+            <Setter Property="Margin" Value="10 0 10 0"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+	</Window.Resources>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="10"/>
+			<ColumnDefinition Width="450"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="10"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="10"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="40"/>
+		</Grid.RowDefinitions>
+		<TextBlock Grid.Row="14" Grid.Column="4" Text="AŻ" TextAlignment="Right" Foreground="Gray" Opacity="0.5" FontSize="15" VerticalAlignment="Bottom" FontWeight="Light" FontStyle="Italic"/>
+		<Image Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Source="Content\logo_sf.jpg"></Image>
+		<Button Grid.Column="1" Grid.Row="3" Click="CreateHousingAssociationClick">
+            <TextBlock Text="DODAJ SPÓŁDZIELNIĘ"/>
         </Button>
-        <Button Grid.Column="1" Grid.Row="2" Background="LightGreen" Click="CreatePersonClick">
-            <TextBlock>DODAJ OSOBĘ</TextBlock>
+		<Button Grid.Column="1" Grid.Row="4" Click="CreatePersonClick">
+            <TextBlock Text="DODAJ OSOBĘ"/>
         </Button>
-        <Button Grid.Column="1" Grid.Row="3" Background="LightGreen">
-            <TextBlock>DODAJ PARAMETRY</TextBlock>
+		<Button Grid.Column="1" Grid.Row="5">
+            <TextBlock Text="DODAJ PARAMETRY"/>
         </Button>
-        <Button Grid.Column="1" Grid.Row="4" Background="Yellow">
-            <TextBlock>MODYFIKUJ SPÓŁDZIELNIĘ</TextBlock>
+		<Button Grid.Column="1" Grid.Row="6">
+            <TextBlock Text="MODYFIKUJ SPÓŁDZIELNIĘ"/>
         </Button>
-        <Button Grid.Column="1" Grid.Row="5" Background="Yellow">
-            <TextBlock>MODYFIKUJ DANE OSOBY</TextBlock>
+		<Button Grid.Column="1" Grid.Row="7">
+            <TextBlock Text="MODYFIKUJ DANE OSOBY"/>
         </Button>
-        <Button Grid.Column="1" Grid.Row="6" Background="Yellow">
-            <TextBlock>MODYFIKUJ PARAMETRY</TextBlock>
+		<Button Grid.Column="1" Grid.Row="8">
+            <TextBlock Text="MODYFIKUJ PARAMETRY"/>
         </Button>
-        <Button Grid.Column="1" Grid.Row="7" Background="Red">
-            <TextBlock>USUŃ SPÓŁDZIELNIĘ</TextBlock>
+		<Button Grid.Column="1" Grid.Row="9">
+            <TextBlock Text="USUŃ SPÓŁDZIELNIĘ"/>
         </Button>
-        <Button Grid.Column="1" Grid.Row="8" Background="Red">
-            <TextBlock>USUŃ OSOBĘ</TextBlock>
+		<Button Grid.Column="1" Grid.Row="10">
+            <TextBlock Text="USUŃ OSOBĘ"/>
         </Button>
-        <Button Grid.Column="1" Grid.Row="9" Background="Red">
-            <TextBlock>USUŃ PARAMETRY</TextBlock>
+		<Button Grid.Column="1" Grid.Row="11">
+            <TextBlock Text="USUŃ PARAMETRY"/>
         </Button>
-        <Button Grid.Column="1" Grid.Row="10" ></Button>
-        <Button Grid.Column="1" Grid.Row="11" ></Button>
-        <Button Grid.Column="1" Grid.Row="12" ></Button>
-        <Button Grid.Column="1" Grid.Row="13" ></Button>
-    </Grid>
+		<Button Grid.Column="1" Grid.Row="12" ></Button>
+		<Button Grid.Column="1" Grid.Row="13" ></Button>
+
+        <TextBlock Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="3" Text="WPROWADZONE SPÓŁDZIELNIE" TextAlignment="Center"/>
+        <DataGrid Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" Grid.RowSpan="10" ItemsSource="{Binding HousingList, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding IdHousingAssociation}" ElementStyle="{StaticResource CellTextBlock}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock FontSize="13" Text="ID"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Name}" ElementStyle="{StaticResource CellTextBlock}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock FontSize="13" Text="NAZWA"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding NIP}" ElementStyle="{StaticResource CellTextBlock}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock FontSize="13" Text="NIP"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Regon}" ElementStyle="{StaticResource CellTextBlock}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock FontSize="13" Text="REGON"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding City}" ElementStyle="{StaticResource CellTextBlock}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock FontSize="13" Text="MIASTO"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Street}" ElementStyle="{StaticResource CellTextBlock}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock FontSize="13" Text="ULICA"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding PostCode}" ElementStyle="{StaticResource CellTextBlock}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock FontSize="13" Text="KOD POCZTOWY"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding NumberOfHouse}" ElementStyle="{StaticResource CellTextBlock}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock FontSize="13" Text="LICZBA DOMOSTW"/>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+	</Grid>
 </Window>

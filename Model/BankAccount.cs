@@ -12,7 +12,7 @@ namespace HousingAssociationApp.Model
         [Key]
         public int IdBankAccount { get; set; }
         public string BankName { get; set; }
-        public int AccountNumber { get; set; }
+        public string AccountNumber { get; set; }
 
         public int IdHousingAssociation { get; set; }
         public virtual HousingAssociation HousingAssociation { get; set; }

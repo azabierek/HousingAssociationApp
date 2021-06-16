@@ -87,48 +87,44 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CRUDHousingAssociationWindows\CreateHousingAssociationWindow.xaml.cs">
+    <Compile Include="CRUDHousingAssociations\CreateHousingAssociationWindow.xaml.cs">
       <DependentUpon>CreateHousingAssociationWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CRUDParameters\CreateParametersWindow.xaml.cs">
-      <DependentUpon>CreateParametersWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CRUDPersonWindows\CreatePersonWindow.xaml.cs">
+    <Compile Include="CRUDPerson\CreatePersonWindow.xaml.cs">
       <DependentUpon>CreatePersonWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104261015404_ChangeBillsForPerson.cs" />
-    <Compile Include="Migrations\202104261015404_ChangeBillsForPerson.designer.cs">
-      <DependentUpon>202104261015404_ChangeBillsForPerson.cs</DependentUpon>
+    <Compile Include="MessageBoxesWindows\CloseWindowsClass.cs" />
+    <Compile Include="MessageBoxesWindows\ConfirmationWindow.xaml.cs">
+      <DependentUpon>ConfirmationWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104261018440_DeleteBillsInPeopleTable.cs" />
-    <Compile Include="Migrations\202104261018440_DeleteBillsInPeopleTable.designer.cs">
-      <DependentUpon>202104261018440_DeleteBillsInPeopleTable.cs</DependentUpon>
+    <Compile Include="Migrations\202105051856438_NewDatabaseModel.cs" />
+    <Compile Include="Migrations\202105051856438_NewDatabaseModel.designer.cs">
+      <DependentUpon>202105051856438_NewDatabaseModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104270612297_InHousingAssociationTableChangeNumberOfHouseFromStringToInt.cs" />
-    <Compile Include="Migrations\202104270612297_InHousingAssociationTableChangeNumberOfHouseFromStringToInt.designer.cs">
-      <DependentUpon>202104270612297_InHousingAssociationTableChangeNumberOfHouseFromStringToInt.cs</DependentUpon>
+    <Compile Include="Migrations\202105191822204_ChangeBankAccountNumberToLong.cs" />
+    <Compile Include="Migrations\202105191822204_ChangeBankAccountNumberToLong.designer.cs">
+      <DependentUpon>202105191822204_ChangeBankAccountNumberToLong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104270756556_ChangeNIPFromIntToString.cs" />
-    <Compile Include="Migrations\202104270756556_ChangeNIPFromIntToString.designer.cs">
-      <DependentUpon>202104270756556_ChangeNIPFromIntToString.cs</DependentUpon>
+    <Compile Include="Migrations\202105191826482_ChangeBankAccountNumberToString.cs" />
+    <Compile Include="Migrations\202105191826482_ChangeBankAccountNumberToString.designer.cs">
+      <DependentUpon>202105191826482_ChangeBankAccountNumberToString.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104270819449_AddDeclaredWaterUsageInParameterTable.cs" />
-    <Compile Include="Migrations\202104270819449_AddDeclaredWaterUsageInParameterTable.designer.cs">
-      <DependentUpon>202104270819449_AddDeclaredWaterUsageInParameterTable.cs</DependentUpon>
+    <Compile Include="Migrations\202106161905344_NameUiqueHousingAssociation.cs" />
+    <Compile Include="Migrations\202106161905344_NameUiqueHousingAssociation.designer.cs">
+      <DependentUpon>202106161905344_NameUiqueHousingAssociation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\HABANKs.cs" />
+    <Compile Include="Model\HAPs.cs" />
+    <Compile Include="Model\HousingAssociationParameters.cs" />
     <Compile Include="Validation\ValidationClass.cs" />
     <Compile Include="VM\HousingAssociationViewModel.cs" />
-    <Compile Include="VM\ParametersViewModel.cs" />
     <Compile Include="VM\PersonViewModel.cs" />
-    <Page Include="CRUDHousingAssociationWindows\CreateHousingAssociationWindow.xaml">
+    <Compile Include="WindowsChanging\ControlChangeClass.cs" />
+    <Page Include="CRUDHousingAssociations\CreateHousingAssociationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CRUDParameters\CreateParametersWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CRUDPersonWindows\CreatePersonWindow.xaml">
+    <Page Include="CRUDPerson\CreatePersonWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,20 +140,12 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MessageBoxesWindows\ConfirmationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202104231805148_AddBillsPersonsAndOtherTables.cs" />
-    <Compile Include="Migrations\202104231805148_AddBillsPersonsAndOtherTables.designer.cs">
-      <DependentUpon>202104231805148_AddBillsPersonsAndOtherTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104231807274_DeleteBankNameFromHousingAssociation.cs" />
-    <Compile Include="Migrations\202104231807274_DeleteBankNameFromHousingAssociation.designer.cs">
-      <DependentUpon>202104231807274_DeleteBankNameFromHousingAssociation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104260743200_AddBenefitTable.cs" />
-    <Compile Include="Migrations\202104260743200_AddBenefitTable.designer.cs">
-      <DependentUpon>202104260743200_AddBenefitTable.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\BankAccount.cs" />
     <Compile Include="Model\Benefit.cs" />
@@ -179,29 +167,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202104231805148_AddBillsPersonsAndOtherTables.resx">
-      <DependentUpon>202104231805148_AddBillsPersonsAndOtherTables.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105051856438_NewDatabaseModel.resx">
+      <DependentUpon>202105051856438_NewDatabaseModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104231807274_DeleteBankNameFromHousingAssociation.resx">
-      <DependentUpon>202104231807274_DeleteBankNameFromHousingAssociation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105191822204_ChangeBankAccountNumberToLong.resx">
+      <DependentUpon>202105191822204_ChangeBankAccountNumberToLong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104260743200_AddBenefitTable.resx">
-      <DependentUpon>202104260743200_AddBenefitTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105191826482_ChangeBankAccountNumberToString.resx">
+      <DependentUpon>202105191826482_ChangeBankAccountNumberToString.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104261015404_ChangeBillsForPerson.resx">
-      <DependentUpon>202104261015404_ChangeBillsForPerson.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104261018440_DeleteBillsInPeopleTable.resx">
-      <DependentUpon>202104261018440_DeleteBillsInPeopleTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104270612297_InHousingAssociationTableChangeNumberOfHouseFromStringToInt.resx">
-      <DependentUpon>202104270612297_InHousingAssociationTableChangeNumberOfHouseFromStringToInt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104270756556_ChangeNIPFromIntToString.resx">
-      <DependentUpon>202104270756556_ChangeNIPFromIntToString.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104270819449_AddDeclaredWaterUsageInParameterTable.resx">
-      <DependentUpon>202104270819449_AddDeclaredWaterUsageInParameterTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106161905344_NameUiqueHousingAssociation.resx">
+      <DependentUpon>202106161905344_NameUiqueHousingAssociation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -214,10 +190,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="logo_sf.jpg" />
+    <Resource Include="Content\logo_sf.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="logo_sf_eq3_icon.ico" />
+    <Resource Include="Content\logo_sf_eq3_icon.ico" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

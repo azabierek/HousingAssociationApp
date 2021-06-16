@@ -1,122 +1,71 @@
-﻿using System;
+﻿using HousingAssociationApp.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
-using HousingAssociationApp.Model;
-using HousingAssociationApp.Validation;
 
 namespace HousingAssociationApp.VM
 {
     public class PersonViewModel : INotifyPropertyChanged
     {
-        private Person person;
-        private HousingAssociation hs;
-        private ValidationClass vc;
-        public ICommand CreateNewPerson { get; }
-        public Action CloseAction { get; set; }
-        public List<HousingAssociation> HousingAssociations { get; set; }
-        //Inserting NEW PERSON!
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        Person person { get; set; }
+
+        List<HousingAssociation> hList;
+
+        public List<HousingAssociation> HousingList
+        {
+            get
+            {
+                return hList;
+            }
+            set
+            {
+                if (hList != value)
+                {
+                    hList = value;
+                    OnPropertyChanged("HousingList");
+                }
+            }
+        }
         public PersonViewModel()
         {
-            person = new Person();
-            using (HouseDbContext hdb = new HouseDbContext()) HousingAssociations = hdb.HousingAssociations.ToList();
-            CreateNewPerson = new RelayCommand(OnAddPersonClick);
+            person = new Person()
+            {
+                Name = "Adrian",
+                Surname = "Żabierek"
+            };
+            using(HouseDbContext hdb = new HouseDbContext())
+            {
+                hList = hdb.HousingAssociations.ToList();
+            }
         }
 
-        //Another constructor - MODIFY EXISTING PERSON.
-
-        bool CanUserAddPerson()
+        public string Name
         {
-            var result = false;
-            vc = new ValidationClass();
-            if (vc.WordValidation(person.Name, person.Surname, person.City, person.Street) && vc.PostCodeValidation(person.PostCode)) result = true;
-            return result;
-        }
-        void OnAddPersonClick()
-        {
-            try
-            {
-                if (CanUserAddPerson())
-                {
-                    using (HouseDbContext hdb = new HouseDbContext())
-                    {
-                        person.IdHousingAssociation = hs.IdHousingAssociation;
-                        hdb.Persons.Add(person);
-                        hdb.SaveChanges();
-                        MessageBox.Show("DODANO OSOBĘ!");
-                        CloseAction();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("WALIDACJA PÓL PRZESZŁA NIEPOMYŚLNIE, SPRAWDŹ WPISY I POPRAW");
-                }
-                
-
-            }
-            catch (ArgumentNullException)
-            {
-                MessageBox.Show("UZUPEŁNIJ POLA WARTOŚCIAMI!\nPOLA NIE MOGĄ ZOSTAĆ PUSTE!");
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("UZUPEŁNIJ DANE OSOBY");
-            }
-        }
-        public HousingAssociation HousingAssociation { 
             get
-            {
-                return hs;
-            }
-            set
-            {
-                if (hs!=value)
-                {
-                    hs = value;
-                    OnPropertyChange("HousingAssociation");
-                }
-            }
-        }
-
-        public int IdPerson { 
-            get
-            {
-                return person.IdPerson;
-            }
-            set
-            {
-                if (person.IdPerson != value)
-                {
-                    person.IdPerson = value;
-                    OnPropertyChange("IdPerson");
-                }
-            }
-        }
-        public string Name { get 
             {
                 return person.Name;
             }
-            set 
+            set
             {
                 if (person.Name!=value)
                 {
                     person.Name = value;
-                    OnPropertyChange("Name");
+                    OnPropertyChanged("Name");
                 }
-            } 
+            }
         }
-        public string Surname
+
+        public string Surname 
         {
             get
             {
@@ -124,13 +73,14 @@ namespace HousingAssociationApp.VM
             }
             set
             {
-                if (person.Surname != value)
+                if (person.Surname!=value)
                 {
                     person.Surname = value;
-                    OnPropertyChange("Surname");
+                    OnPropertyChanged("Surname");
                 }
-            }
+            } 
         }
+
         public string City
         {
             get
@@ -142,7 +92,7 @@ namespace HousingAssociationApp.VM
                 if (person.City != value)
                 {
                     person.City = value;
-                    OnPropertyChange("City");
+                    OnPropertyChanged("City");
                 }
             }
         }
@@ -157,7 +107,7 @@ namespace HousingAssociationApp.VM
                 if (person.Street != value)
                 {
                     person.Street = value;
-                    OnPropertyChange("Street");
+                    OnPropertyChanged("Street");
                 }
             }
         }
@@ -169,13 +119,14 @@ namespace HousingAssociationApp.VM
             }
             set
             {
-                if (person.Housenumber != value)
+                if (person.Housenumber!=value)
                 {
                     person.Housenumber = value;
-                    OnPropertyChange("Housenumber");
+                    OnPropertyChanged("Housenumber");
                 }
             }
         }
+
         public string PostCode
         {
             get
@@ -184,19 +135,12 @@ namespace HousingAssociationApp.VM
             }
             set
             {
-                if (person.PostCode != value)
+                if (person.PostCode!=value)
                 {
                     person.PostCode = value;
-                    OnPropertyChange("PostCode");
+                    OnPropertyChanged("PostCode");
                 }
             }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChange(string propertyName)
-        {
-            if (PropertyChanged!=null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
 

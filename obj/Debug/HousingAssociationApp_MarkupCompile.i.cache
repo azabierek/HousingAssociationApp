@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\adrzab\source\repos\HousingAssociationApp\obj\Debug\
+C:\Users\Ślisky\source\repos\azabierek\HousingAssociationApp\obj\Debug\
 HousingAssociationApp
 none
 false
 DEBUG;TRACE
-C:\Users\adrzab\source\repos\HousingAssociationApp\App.xaml
-4760944738
+C:\Users\Ślisky\source\repos\azabierek\HousingAssociationApp\App.xaml
+4-631430281
 
-37-1217351932
-1271740941606
-CRUDHousingAssociationWindows\CreateHousingAssociationWindow.xaml;CRUDParameters\CreateParametersWindow.xaml;CRUDPersonWindows\CreatePersonWindow.xaml;MainWindow.xaml;
+33-1840750809
+127621659318
+CRUDHousingAssociations\CreateHousingAssociationWindow.xaml;CRUDPerson\CreatePersonWindow.xaml;MainWindow.xaml;MessageBoxesWindows\ConfirmationWindow.xaml;
 
-True
+False
 
